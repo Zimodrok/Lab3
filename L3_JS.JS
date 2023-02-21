@@ -1,13 +1,9 @@
 "use strict";
 function returnValue(){
-    let string = document.getElementById("seq").value.split(' ');
-    let array = [];
-    for(let i =0; i <= string.length-1; i++){
-        array[i] = parseInt(string[i])
+    let array = document.getElementById("seq").value.split(' ');
+    for(let i =0; i < array.length; i++){
+        array[i] = parseInt(array[i])
     }
-    // array.forEach((element) => {
-    //     parseInt(element);
-    // });
     document.getElementById("RespField").innerHTML = "";
     // let array = [1,2,3,4,5,6,7,8, 9, 10, 11]
     const R = parseInt(document.getElementById("key").value);
