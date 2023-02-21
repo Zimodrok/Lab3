@@ -1,12 +1,20 @@
 "use strict";
 function returnValue(){
-    let array = document.getElementById("seq").value.split(" ");
-    array.forEach(array[i] = parseInt(array[i]));
+    let string = document.getElementById("seq").value.split(' ');
+    let array = [];
+    for(let i =0; i <= string.length-1; i++){
+        array[i] = parseInt(string[i])
+    }
+    // array.forEach((element) => {
+    //     parseInt(element);
+    // });
     document.getElementById("RespField").innerHTML = "";
     // let array = [1,2,3,4,5,6,7,8, 9, 10, 11]
     const R = parseInt(document.getElementById("key").value);
     let result = binarySearch(array, R);
-    if(result == -1)    alert("Елемент не знайденно, спробуйте перевірити массив на недопустимі символи");
+    if(result == -1){
+        alert("Елемент не знайденно, спробуйте перевірити массив на недопустимі символи");
+    }
     return 0;
 }
 
@@ -16,8 +24,8 @@ function binarySearch(array, R) {
     while (start<=end){
         let mid=Math.floor((start + end)/2);
         if (array[mid]===R) {
-           document.getElementById("RespField").innerHTML += '<span style = "background-color: brown;">' + array[mid] + '</span>'+ '<br>' + "at index: " + mid;
-             return mid;
+        document.getElementById("RespField").innerHTML += '<span style = "background-color: brown;">' + array[mid] + '</span>'+ '<br>' + "at index: " + mid;
+        return mid;
         }
         else if (array[mid] < R){
             document.getElementById("RespField").innerHTML += '<span style = "background-color: red;">' + array.slice(start, mid) + ',' + '</span>' +
